@@ -289,6 +289,18 @@ body {
 }
 
 .proto-content {
+  position: relative;
+  .dropdown{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    ul{
+      padding-left: 20px;
+      li{
+      list-style: none;
+    }
+    }
+  }
   .thumbnail {
     border-radius: 0;
     padding: 0;
