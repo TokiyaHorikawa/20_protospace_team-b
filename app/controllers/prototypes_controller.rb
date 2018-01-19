@@ -33,6 +33,7 @@ class PrototypesController < ApplicationController
 
   def edit
     @prototype.captured_images.build
+    @image = @prototype.captured_images
     # @prototype.captured_images.cache! unless @prototype.captured_images.blank?
   end
 
