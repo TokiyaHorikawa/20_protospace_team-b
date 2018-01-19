@@ -16,9 +16,9 @@ $(function(){
       return function(e) {
         //既存のプレビューを削除
         $preview.empty();
-        alert('ok');
+        // alert('ok');
         // .prevewの領域の中にロードした画像を表示するimageタグを追加
-        $preview.append($('<img>').attr({
+        $preview.append($('img').attr({
                   src: e.target.result,
                   width: "100%",
                   height:"100%",
