@@ -32,12 +32,15 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    redirect_to ({ action: show })
+    @prototype.captured_images.build
+    @image = @prototype.captured_images
+    # @prototype.captured_images.cache! unless @prototype.captured_images.blank?
   end
 
   def update
     if @prototype.user_id == current_user.id
       @prototype.update(prototype_params)
+      redirect_to root_path
     end
   end
 
