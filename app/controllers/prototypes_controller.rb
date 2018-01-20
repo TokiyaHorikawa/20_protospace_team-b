@@ -29,7 +29,7 @@ class PrototypesController < ApplicationController
   def destroy
     if @prototype.user_id == current_user.id
       @prototype.destroy
-      redirect_to :root, notice: 'Prototype was successfully deleted'
+      redirect_to :root
     else
       redirect_to :root
     end
