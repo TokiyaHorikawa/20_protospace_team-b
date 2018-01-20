@@ -1,0 +1,12 @@
+#comment-area.col-md-8
+  / コメントエリア: 繰り返し
+  #comment-list
+    .media
+      .media-left
+        = link_to 'i-con'
+      .media-body
+        %h4.media-heading#top-aligned-media
+          = comment.user.name
+        %p
+          = comment.content
+

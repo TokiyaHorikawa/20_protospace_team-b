@@ -10,7 +10,7 @@
       .row
         .col-md-12
           %h4 Main Thumbnail
-          .cover-image-upload#main_image_uploader
+          .cover-image-upload#main_image_uploader.preview
             = f.fields_for :captured_images do |image|
               %img
               = image.file_field :content, required: true

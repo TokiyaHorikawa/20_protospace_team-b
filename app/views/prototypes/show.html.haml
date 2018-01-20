@@ -37,3 +37,9 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+  .row.proto-comments
+    %h4.col-md-12
+      Comments
+      %span.num (コメント数)
+      = render partial: "comments/comment", collection: @comments
+    = render partial: "comments/form"

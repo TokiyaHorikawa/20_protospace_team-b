@@ -20,6 +20,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @prototype.comments.includes(:user)
   end
 
   def destroy
@@ -56,7 +58,7 @@ class PrototypesController < ApplicationController
       :catch_copy,
       :concept,
       :user_id,
-      captured_images_attributes: [:content, :status]
+      captured_images_attributes: [:id, :content, :status]
     )
   end
 end
