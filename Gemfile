@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
 gem 'pg', group: :production
+gem 'data-confirm-modal'
 
 group :development, :test do
   gem 'byebug'
