@@ -360,12 +360,20 @@ body {
   }
 
   .proto-comments {
+    padding-left: 20px;
     h4 {
       padding-bottom: 20px;
+      clear: both;
     }
 
+    .form{
+      width: 700px;
+    }
     form {
       margin: 40px 0;
+      .comment-form {
+        padding-left: 15px;
+      }
     }
 
     .form-group {
