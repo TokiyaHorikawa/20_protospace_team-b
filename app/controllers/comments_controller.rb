@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def update
   end
 
-  def ddestroy
+  def destroy
   end
 
   private
