@@ -4,7 +4,7 @@
       %li
         = link_to '編集', edit_prototype_path(prototype.id), method: :get
       %li
-        = link_to '削除', prototype_path(prototype.id), method: :delete
+        = link_to '削除', prototype_path(prototype.id), method: :delete, data: {confirm: 'Are you sure?'}
   .thumbnail
     = link_to image_tag(prototype.set_main_thumbnail), prototype_path(prototype)
     .caption
