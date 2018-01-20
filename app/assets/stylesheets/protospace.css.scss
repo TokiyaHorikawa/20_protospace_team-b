@@ -343,11 +343,16 @@ body {
 
     button {
       padding-right: 35px;
-
+      height: 30px;
+      width: 150px;
+      i {
+        padding: 10px;
+      }
       img {
         max-width: 18px;
         margin-right: 5px;
       }
+
 
       .num {
         font-weight: bold;
