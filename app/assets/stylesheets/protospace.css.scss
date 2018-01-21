@@ -365,6 +365,16 @@ body {
       padding-bottom: 20px;
       clear: both;
     }
+    #comment-area {
+      #comment-list {
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        color: #5d627b;
+        background: #c6e4ff;
+        border-bottom: solid 6px #aac5de;
+        border-radius: 9px;
+      }
+    }
 
     .form{
       width: 700px;
