@@ -17,6 +17,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy if @comment.user_id == current_user.id
+    redirect_to prototype_path(@prototype.id)
   end
 
   private

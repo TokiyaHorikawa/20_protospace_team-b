@@ -373,6 +373,33 @@ body {
         background: #c6e4ff;
         border-bottom: solid 6px #aac5de;
         border-radius: 9px;
+        position: relative;
+        .media {
+          .media-left {
+          }
+          .media-body {
+            .media-heading {
+              float: left;
+            }
+            p{
+              // float: left;
+              clear: both;
+            }
+            .function-list {
+              // float: right;
+              position: absolute;
+              top: 5px;
+              right: 10px;
+              .comment-btn{
+                min-width: 50px;
+                padding: 0;
+                background-color: #9fd5f5;
+                border: solid 0.5px #9fd5f5;/*線*/
+                border-radius: 10px;/*角の丸み*/
+              }
+            }
+          }
+        }
       }
     }
 
