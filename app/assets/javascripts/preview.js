@@ -1,11 +1,11 @@
 $(function(){
 
   //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
-  $('[type="file"]').on('change', function(e) {
+  $('.main_preview').change( function(e) {
+    console.log('hogehoeg')
     var file = e.target.files[0],
         reader = new FileReader(),
-        $preview = $(".main");
-        $subpreview = $(".subpreview");
+        $preview = $('.main_preview');
         t = this;
 
 
@@ -25,7 +25,7 @@ $(function(){
                   src: e.target.result,
                   width: "100%",
                   height:"100%",
-                  class: "main",
+                  class: "preview",
                   title: file.name
               }));
       };
@@ -34,5 +34,3 @@ $(function(){
     reader.readAsDataURL(file);
   });
 });
-
-
