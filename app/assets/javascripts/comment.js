@@ -12,6 +12,14 @@ $(function() {
                         ${ comment.name }
                       </h4>
                       <p>${ comment.content }</p>
+                      <div class="function-list">
+                        <div class="btn comment-btn">
+                          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/prototypes/${ comment.prototype_id }/comments/${ comment.id}">削除</a>
+                        </div>
+                        <div class="btn comment-btn">
+                          編集
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>`
