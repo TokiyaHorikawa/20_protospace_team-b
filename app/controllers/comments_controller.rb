@@ -4,7 +4,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    redirect_to prototype_path(@prototype.id)
+    respond_to do |format|
+      format.html { redirect_to prototype_path(@prototype.id) }
+      format.json
+    end
   end
 
   def edit
