@@ -12,4 +12,4 @@
         .btn.comment-btn
           = link_to '削除', prototype_comment_path(comment.prototype.id, comment.id), method: :delete, data: {confirm: 'Are you sure?'}
         .btn.comment-btn
-          編集
+          = link_to '編集', edit_prototype_comment_path(comment.prototype.id, comment.id)

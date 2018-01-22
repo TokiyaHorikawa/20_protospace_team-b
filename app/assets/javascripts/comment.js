@@ -17,7 +17,7 @@ $(function() {
                           <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/prototypes/${ comment.prototype_id }/comments/${ comment.id}">削除</a>
                         </div>
                         <div class="btn comment-btn">
-                          編集
+                          <a href="/prototypes/${ comment.prototype_id }/comments/${ comment.id }/edit">編集</a>
                         </div>
                       </div>
                     </div>

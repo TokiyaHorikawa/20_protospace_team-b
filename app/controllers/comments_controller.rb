@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_prototype
+  before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create]
 
   def create
@@ -14,6 +15,8 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @comment.update(comment_params) if @comment.user_id == current_user.id
+    redirect_to prototype_path(@prototype.id)
   end
 
   def destroy
@@ -26,6 +29,10 @@ class CommentsController < ApplicationController
 
   def set_prototype
     @prototype = Prototype.find(params[:prototype_id])
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 
   def comment_params

@@ -421,6 +421,34 @@ body {
   }
 }
 
+.edit_comment_form{
+  background-color: #c6e4ff;
+  border: solid 0.5px #8dccc9;
+  box-shadow: 0 0 17px;
+  border-radius: 10px;
+  width: 55%;
+  margin: 60px auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  opacity: 0.7;
+ .form{
+    width: 700px;
+    margin: 0 auto;
+  }
+  form {
+    margin: 40px 0;
+    .comment-form {
+      padding-left: 15px;
+    }
+  }
+
+  .form-group {
+    textarea {
+      width: 100%;
+    }
+  }
+}
+
 .user-page {
   .user-nav {
     padding: 50px 0;
