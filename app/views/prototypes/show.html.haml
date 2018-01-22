@@ -40,6 +40,8 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (コメント数)
+      %span.num
+        = "( #{ @comments.count } )"
+    #comment-area.col-md-8
       = render partial: "comments/comment", collection: @comments
     = render partial: "comments/form"
