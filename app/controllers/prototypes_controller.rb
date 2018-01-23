@@ -23,7 +23,8 @@ class PrototypesController < ApplicationController
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
     @prototype = Prototype.find(params[:id])
-    @likes = Like.where(prototype_id: params[:id], user_id: current_user.id)
+    # @likes = Like.where(prototype_id: params[:id], user_id: current_user.id)
+    @like = Like.find_by(prototype_id: params[:id], user_id: current_user.id)
   end
 
   def destroy
