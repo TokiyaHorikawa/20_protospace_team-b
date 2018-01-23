@@ -2,7 +2,18 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.includes(:user).page(params[:page]).per(2).order("created_at DESC")
+    @prototypes = Prototype.includes(:user).page(params[:page]).per(3).order("created_at DESC")
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def sort_popular
+    @prototypes = Prototype.includes(:user).page(params[:page]).per(5).order("likes_count DESC")
+    respond_to do |format|
+      format.json
+    end
   end
 
   def new
