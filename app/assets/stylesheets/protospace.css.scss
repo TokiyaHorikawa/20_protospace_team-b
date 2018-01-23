@@ -592,6 +592,10 @@ body {
     font-size: 24px;
   }
 
+  .col-md-2{
+    padding: 0;
+  }
+
   .user-image {
     border: 2px solid #ddd;
     border-radius: 50%;
@@ -600,6 +604,7 @@ body {
     position: relative;
     background-color: #fff;
     background-size: cover;
+
 
     button {
       font-size: 9px;
