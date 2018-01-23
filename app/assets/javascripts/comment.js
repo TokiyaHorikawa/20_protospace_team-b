@@ -5,7 +5,9 @@ $(function() {
     var html = `<div id="comment-list">
                   <div class="media">
                     <div class="media-left">
-                      <a href="">i-con</a>
+                      <a href="/users/${ comment.user_id }">
+                        <image alt="user_icon" class="media-object" style="width: 64px; height: 64px; border-radius: 30%;" src="${ comment.avatar.url }">
+                      </a>
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading" id="top-aligned-media">
