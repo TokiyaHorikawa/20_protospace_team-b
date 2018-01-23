@@ -68,3 +68,12 @@ belongs_to :user, :prototype
 - user_id
 - prototype_id
 
+
+##tag
+-title
+-prototype_id
+
+```
+users has_many :protos, :comments
+```
+
