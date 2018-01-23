@@ -2,7 +2,8 @@
   .media
     .media-left
       / リンクをつける
-      = link_to 'i-con'
+      = link_to user_path(comment.user_id) do
+        = image_tag(comment.user.avatar.thumb, alt: "user_icon", class: "media-object", style: "width: 64px; height: 64px; border-radius: 30%;")
     .media-body
       %h4.media-heading#top-aligned-media
         = comment.user.name
