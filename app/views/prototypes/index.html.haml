@@ -7,7 +7,7 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.btn-default.btn-popular
-          = link_to "Popular", "#"
+          = link_to "Popular", "/prototypes", id: "popular_btn"
         %li.btn-default.btn-popular
           = link_to "Newest", "#"
       = link_to "VIEW TAGS", "#", class: "btn btn-default col-lg-1"
@@ -18,9 +18,4 @@
 
 .text-center
   = paginate @prototypes
-
-
-
-
-
 
