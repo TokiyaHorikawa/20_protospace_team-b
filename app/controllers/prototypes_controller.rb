@@ -12,6 +12,7 @@ class PrototypesController < ApplicationController
   def sort_popular
     @prototypes = Prototype.includes(:user).page(params[:page]).per(5).order("likes_count DESC")
     respond_to do |format|
+      format.html
       format.json
     end
   end
