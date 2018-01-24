@@ -32,5 +32,10 @@
         .col-md-12
           %h4 Concept
           = f.text_area :concept, require: true, placeholder: "Input Concept"
+        .col-md-12
+        %4 Tags
+        =f.text_area :tags,require:true, placeholder: "Input Tags"
       .row.text-center.proto-btn
         = f.submit "PUBLISH", id: "button", class: "btn btn-lg btn-primary btn-block"
+
+

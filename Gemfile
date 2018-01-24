@@ -19,7 +19,7 @@ gem 'rmagick'
 gem 'kaminari'
 gem 'pg', group: :production
 gem 'data-confirm-modal'
-
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug'

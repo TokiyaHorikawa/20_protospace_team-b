@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.includes(:user).page(params[:page]).per(2).order("created_at DESC")
+    @prototypes = Prototype.includes(:user).page(params[:page]).per(20).order("created_at DESC")
   end
 
   def new
@@ -15,13 +15,14 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root, notice: 'New prototype was successfully created'
     else
-      redirect_to ({ action: new }), alert: 'YNew prototype was unsuccessfully created'
-     end
+      redirect_to new_prototype_path, alert: 'YNew prototype was unsuccessfully created'
+    end
   end
 
   def show
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
+
   end
 
   def destroy
@@ -34,9 +35,19 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype.captured_images.build
-    @image = @prototype.captured_images
-    # @prototype.captured_images.cache! unless @prototype.captured_images.blank?
+    # @prototype.captured_images.build
+    @main_image = @prototype.captured_images.where()
+    @sub_image = []
+    @image.each do |image|
+      if image.status == "0"
+        @main_image = image
+      else
+        @sub_image << image
+      end
+    end
+      return @main_image
+      return @sub_image
+    # @prototype.captured_images.cache! unless @prototd_images.blank?
   end
 
   def update
@@ -53,13 +64,14 @@ class PrototypesController < ApplicationController
   end
 
   def prototype_params
+    tag_list = params[:tag_list]
     params.require(:prototype).permit(
       :title,
       :catch_copy,
       :concept,
       :user_id,
-      :tag_list,
       captured_images_attributes: [:id, :content, :status]
     )
   end
 end
+
