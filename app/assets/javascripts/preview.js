@@ -5,7 +5,7 @@ $(function(){
   $('input[type=file]').change( function(e) {
     var file = e.target.files[0],
         reader = new FileReader(),
-        t = this;
+         t = this;
         img = $(this).prev()[0]
 
 

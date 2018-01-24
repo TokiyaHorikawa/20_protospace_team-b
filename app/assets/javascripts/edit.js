@@ -2,11 +2,13 @@ $(function(){
 
   //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
 
-  $('input[type=file]').change( function(e) {
+  // $('input[type=file]').change( function(e) {
+  $(window).on('load',function(e)  {
     var file = e.target.files[0],
         reader = new FileReader(),
         // t = this;
         img = $(this).prev()[0]
+        console.log(img)
 
 
     // 画像ファイル以外の場合は何もしない

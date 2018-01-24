@@ -12,7 +12,6 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(prototype_params)
-    binding.pry
     if @prototype.save
       redirect_to :root, notice: 'New prototype was successfully created'
     else
@@ -23,6 +22,7 @@ class PrototypesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
+
   end
 
   def destroy
@@ -35,8 +35,9 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype.captured_images.build
-    @image = @prototype.captured_images
+    # @prototype.captured_images.build
+    @main_image = @prototype.captured_images.where("status = 0")
+    @sub_image = @prototype.captured_images.where("status = 1")
     # @prototype.captured_images.cache! unless @prototype.captured_images.blank?
   end
 
@@ -54,6 +55,7 @@ class PrototypesController < ApplicationController
   end
 
   def prototype_params
+    tag_list = params[:tag_list]
     params.require(:prototype).permit(
       :title,
       :catch_copy,
@@ -63,3 +65,4 @@ class PrototypesController < ApplicationController
     )
   end
 end
+
