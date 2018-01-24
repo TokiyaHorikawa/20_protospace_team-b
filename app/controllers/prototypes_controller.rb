@@ -35,10 +35,10 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    # @prototype.captured_images.build
+        # @prototype.captured_images.build
     @main_image = @prototype.captured_images.where("status = 0")
     @sub_image = @prototype.captured_images.where("status = 1")
-    # @prototype.captured_images.cache! unless @prototype.captured_images.blank?
+
   end
 
   def update
