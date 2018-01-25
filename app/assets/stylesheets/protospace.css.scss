@@ -438,6 +438,10 @@ body {
     height: 500px;
     position: relative;
     margin-bottom: 20px;
+    // .img-responsive {
+    //   height: 100%;
+    //   width: 100%;
+    // }
 
     input {
       position: absolute;
@@ -459,6 +463,7 @@ body {
     .image-upload {
       background: image-url("noimage.png") #fff no-repeat center center;
       height: 200px;
+      width:200px;
       position: relative;
 
       input {
@@ -469,15 +474,16 @@ body {
         bottom: 0;
         width: 100%;
         opacity: 0;
+        height:100%;
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
       }
     }
 
-    .image-upload-plus {
-      height: 200px;
-      width: 100%;
-      text-align: center;
+    // .image-upload-plus {
+      // height: 200px;
+      // width: 100%;
+      // text-align: center;
 
       span {
         color: #D1D7DB;
@@ -485,12 +491,18 @@ body {
         padding-top: 50px;
         display: inline-block;
       }
-    }
+
   }
   .proto-btn {
     max-width: 300px;
     margin: auto;
   }
+}
+
+.sub_image{
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
 }
 
 .user-new {

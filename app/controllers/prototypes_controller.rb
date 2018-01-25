@@ -38,7 +38,7 @@ class PrototypesController < ApplicationController
         # @prototype.captured_images.build
     @main_image = @prototype.captured_images.where("status = 0")
     @sub_image = @prototype.captured_images.where("status = 1")
-
+    @image = @prototype.captured_images
   end
 
   def update
