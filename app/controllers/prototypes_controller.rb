@@ -12,7 +12,7 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(prototype_params)
-    binding.pry
+
     if @prototype.save
       redirect_to :root, notice: 'New prototype was successfully created'
     else
