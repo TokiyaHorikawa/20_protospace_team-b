@@ -17,7 +17,6 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
-gem 'pg', group: :production
 gem 'data-confirm-modal'
 
 group :development, :test do
@@ -27,4 +26,9 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production do
+  gem 'unicorn'
+  gem 'pg'
 end
