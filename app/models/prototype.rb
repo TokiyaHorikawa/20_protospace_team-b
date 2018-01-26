@@ -17,7 +17,7 @@ class Prototype < ActiveRecord::Base
 
   def set_main_thumbnail
     if captured_images.present?
-      return captured_images.main.last.content
+      return captured_images.main.first.content
     else
       return "noimage-big.png"
     end
