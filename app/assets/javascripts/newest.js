@@ -13,7 +13,7 @@ $(function() {
                   </div>
                   <div class="thumbnail">
                     <a href = "/prototypes/${prototype.id}">
-                      <img src="/uploads/captured_image/content/19/mig.jpeg">
+                      <img src="${prototype.content}">
                     </a>
                     <div class = "caption">
                       <h3>
@@ -48,6 +48,7 @@ $(function() {
       $('.container.proto-list').empty();
       data.forEach(function(prototype){
         appendHTML(prototype);
+        console.log(prototype.content);
       });
     })
     return false;

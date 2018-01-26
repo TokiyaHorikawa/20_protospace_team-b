@@ -13,7 +13,7 @@ $(function() {
                   </div>
                   <div class="thumbnail">
                     <a href = "/prototypes/${prototype.id}">
-                      <img src="/uploads/captured_image/content/18/Jn3s5-fM.jpeg">
+                      <img src="${prototype.content}">
                     </a>
                     <div class = "caption">
                       <h3>

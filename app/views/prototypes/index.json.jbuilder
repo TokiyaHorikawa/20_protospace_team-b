@@ -4,5 +4,5 @@ json.array! @prototypes do |prototype|
   json.posted_date     prototype.posted_date
   json.id              prototype.id
   json.user_id         prototype.user_id
-  # json.content_id      prototype.captured_images
+  json.content         prototype.captured_images.main[0].content.url
 end
