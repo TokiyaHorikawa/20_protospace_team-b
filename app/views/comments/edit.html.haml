@@ -1,0 +1,11 @@
+.edit_comment_form
+  .form
+    = form_for [@prototype, @comment] do |f|
+      %h4.comment-form
+        Edit Comment（編集）
+      .row.comment-form
+        .form-group.col-md-10
+          = f.text_area :content, placeholder: "Your comments", class: "textform-control", id: "comment_text"
+        .form-group.col-md-2
+          = f.submit 'COMMENT', class: "btn btn-primary"
+

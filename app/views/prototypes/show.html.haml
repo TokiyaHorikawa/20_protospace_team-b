@@ -13,6 +13,8 @@
             = link_to "#{@prototype.user.name}", user_path(@prototype.user)
             .degree
               = @prototype.user.position
+        .media-right
+          = render partial: 'likes/like', locals: {prototype: @prototype}
   .row
     .col-md-9.image-box
       = image_tag(@prototype.set_main_thumbnail.large, class: 'img-responsive img-size-fix', style: "margin: 0 auto;")
@@ -40,6 +42,8 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (コメント数)
+      %span.num
+        = "( #{ @comments.count } )"
+    #comment-area.col-md-8
       = render partial: "comments/comment", collection: @comments
     = render partial: "comments/form"
