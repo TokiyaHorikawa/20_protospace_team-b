@@ -27,13 +27,16 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to :root, notice: 'New prototype was successfully created'
     else
-      redirect_to ({ action: new }), alert: 'YNew prototype was unsuccessfully created'
-     end
+      redirect_to new_prototype_path, alert: 'YNew prototype was unsuccessfully created'
+    end
   end
 
   def show
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
+    @prototype = Prototype.find(params[:id])
+    # @likes = Like.where(prototype_id: params[:id], user_id: current_user.id)
+    @like = Like.find_by(prototype_id: params[:id], user_id: current_user.id)
   end
 
   def destroy
@@ -46,9 +49,10 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype.captured_images.build
+        # @prototype.captured_images.build
+    @main_image = @prototype.captured_images.where("status = 0")
+    @sub_image = @prototype.captured_images.where("status = 1")
     @image = @prototype.captured_images
-    # @prototype.captured_images.cache! unless @prototype.captured_images.blank?
   end
 
   def update
@@ -65,6 +69,7 @@ class PrototypesController < ApplicationController
   end
 
   def prototype_params
+    tag_list = params[:tag_list]
     params.require(:prototype).permit(
       :title,
       :catch_copy,
@@ -74,3 +79,4 @@ class PrototypesController < ApplicationController
     )
   end
 end
+
